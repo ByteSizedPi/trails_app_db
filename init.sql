@@ -1,5 +1,9 @@
+CREATE DATABASE IF NOT EXISTS trials_db;
+
+USE trials_db;
+
 CREATE TABLE
-    Events (
+    IF NOT EXISTS Events (
         id INT AUTO_INCREMENT,
         date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         name VARCHAR(255),
@@ -11,15 +15,15 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    Sections (
+    IF NOT EXISTS Sections (
         event_id INT,
         section_number INT,
         PRIMARY KEY (event_id, section_number),
-        FOREIGN KEY (event_id) REFERENCES Events (id) ON DELETE CASCADE,
+        FOREIGN KEY (event_id) REFERENCES Events (id) ON DELETE CASCADE
     );
 
 CREATE TABLE
-    Classes (
+    IF NOT EXISTS Classes (
         id INT AUTO_INCREMENT,
         name VARCHAR(5),
         PRIMARY KEY (id)
@@ -34,7 +38,7 @@ VALUES
     ("C");
 
 CREATE TABLE
-    Riders (
+    IF NOT EXISTS Riders (
         event_id INT,
         rider_number INT,
         rider_name VARCHAR(255) NOT NULL,
@@ -45,7 +49,7 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    Scores (
+    IF NOT EXISTS Scores (
         -- identifiers
         event_id INT,
         rider_number INT,
