@@ -11,6 +11,7 @@ CREATE TABLE
         location VARCHAR(255) NOT NULL,
         lap_count INT NOT NULL,
         completed BOOL DEFAULT FALSE,
+        password VARCHAR(255),
         PRIMARY KEY (id)
     );
 
