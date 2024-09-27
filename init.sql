@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS trials_db;
+CREATE DATABASE IF NOT EXISTS trialsob_db;
 
-USE trials_db;
+USE trialsob_db;
 
 CREATE TABLE
     IF NOT EXISTS Events (
